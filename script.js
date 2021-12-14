@@ -19,20 +19,21 @@ const cAll = (a, b, c) => {
     e.classList.add("green");
     f.classList.add("green");
     setTimeout(() => {
-      // reset();
-    }, 2000);
-    return true;
+      alert("You Win...");
+      location.reload();
+    }, 100);
+    return;
   }
   if (d.classList.contains("tac") && e.classList.contains("tac") && f.classList.contains("tac")) {
     d.classList.add("red");
     e.classList.add("red");
     f.classList.add("red");
     setTimeout(() => {
-      // reset();
-    }, 2000);
-    return true;
+      alert("LoL . Play Again if you can!");
+      location.reload();
+    }, 100);
+    return;
   }
-  return false;
 };
 const check = () => {
   cAll(1, 2, 3);
@@ -43,6 +44,15 @@ const check = () => {
   cAll(3, 6, 9);
   cAll(1, 5, 9);
   cAll(3, 5, 7);
+  if (cf()) {
+    setTimeout(() => {
+      if (confirm(`Ewee !\nClick ok to play again and cancle to exit`)) {
+        location.reload();
+      } else {
+        close();
+      }
+    }, 50);
+  }
 };
 // ------------
 const ce = (item) => {
@@ -116,7 +126,6 @@ const aiCheckTwo = (a, b, c) => {
     check2(3, 5, 7),
   ];
   tic.sort();
-
   if (tac[0]) {
     tac[0].classList.add("tac");
     return true;
@@ -128,19 +137,28 @@ const aiCheckTwo = (a, b, c) => {
   return false;
 };
 const ai = () => {
-  if (aiCheckTwo() && !time) {
-    time = true;
-    check();
-    return;
-  }
-  const item = allItems[mri()];
-  while (true) {
-    if (ce(item)) {
-      item.classList.add("tac");
-      time = true;
-      break;
+  if (!cf() && !time) {
+    if (aiCheckTwo()) {
+    } else if (!cf1()) {
+      while (true) {
+        const item = allItems[mri()];
+        if (ce(item)) {
+          item.classList.add("tac");
+          break;
+        }
+      }
+    } else {
+      while (true) {
+        const item = allItems[mathRandom(0, 8)];
+        if (ce(item)) {
+          item.classList.add("tac");
+          break;
+        }
+      }
     }
+    time = true;
   }
+  check();
 };
 // --------============================= ===
 allItems.forEach((element) => {
@@ -151,12 +169,15 @@ allItems.forEach((element) => {
       setTimeout(() => {
         ai();
       }, 200);
-      check();
     }
+
+    check();
   });
 });
-
 if (mathRandom(0, 1)) {
+  time = false;
   ai();
+} else {
   time = true;
+  console.log("It's your turn.");
 }
