@@ -62,6 +62,18 @@ main {
   cursor: pointer;
 }
 
+#ticTacToe > div i {
+  display: none;
+}
+
+#ticTacToe .tic .fa-circle {
+  display: block;
+}
+
+#ticTacToe .tac .fa-times {
+  display: block;
+}
+
 .red {
   background-color: red !important;
 }

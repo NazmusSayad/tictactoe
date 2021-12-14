@@ -50,8 +50,19 @@ main {
     justify-content: space-around;
     color: #fff;
     cursor: pointer;
+    i {
+      display: none;
+    }
   }
   .tic {
+    .fa-circle {
+      display: block;
+    }
+  }
+  .tac {
+    .fa-times {
+      display: block;
+    }
   }
 }
 .red {
