@@ -10,12 +10,19 @@ html {
   background-color: aliceblue;
 }
 
+body {
+  min-height: fit-content;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 main {
-  height: 100vh;
-  width: 100vw;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin: 50px;
 }
 
 #ticTacToe {
@@ -59,19 +66,31 @@ main {
   align-items: center;
   justify-content: space-around;
   color: #fff;
-  cursor: pointer;
+  cursor: not-allowed;
 }
 
 #ticTacToe > div i {
   display: none;
 }
 
+#ticTacToe .tic {
+  cursor: no-drop !important;
+}
+
 #ticTacToe .tic .fa-circle {
   display: block;
 }
 
+#ticTacToe .tac {
+  cursor: no-drop !important;
+}
+
 #ticTacToe .tac .fa-times {
   display: block;
+}
+
+.active > div {
+  cursor: pointer !important;
 }
 
 .red {
@@ -80,4 +99,25 @@ main {
 
 .green {
   background-color: aqua !important;
+}
+
+.bottomCon {
+  min-height: 30vh;
+  text-align: center;
+}
+
+.bottomCon .msgBox {
+  font-size: 1.3rem;
+  color: coral;
+}
+
+button {
+  font-size: 1.2rem;
+  border: 0;
+  cursor: pointer;
+  margin-top: 10vh;
+  background: aquamarine;
+  padding: 10px 0;
+  width: 150px;
+  border-radius: 10px;
 }
