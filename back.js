@@ -123,7 +123,6 @@ const check3 = (a, b, c) => {
   if (j && k && ce(f)) {
     return f;
   }
-
   return false;
 };
 const aiCheckTwo = (a, b, c) => {
@@ -165,7 +164,6 @@ const ai = () => {
   if (!active) {
     return;
   }
-
   if (aiCheckTwo()) {
   } else if (!cf1()) {
     while (true) {
@@ -204,7 +202,6 @@ const startGame = () => {
   msgBox.textContent = "Let's see";
   event.target.textContent = "Play again";
 };
-
 const msg = (param, i) => {
   switch (param) {
     case "win":
@@ -223,10 +220,7 @@ const msg = (param, i) => {
       main.classList.remove("active");
       break;
   }
-  if (i !== undefined) {
+  if (i) {
     msgBox.textContent = param;
-    setTimeout(() => {
-      msgBox.textContent = "";
-    }, 2000);
   }
 };
