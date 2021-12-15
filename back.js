@@ -1,5 +1,7 @@
 const arNUmber1 = [0, 2, 4, 6, 8];
+let clickedOn;
 const array = [null, "item1", "item2", "item3", "item4", "item5", "item6", "item7", "item8", "item9"];
+
 const mathRandom = (min = 0, max = 1) => {
   min = Math.ceil(min);
   return Math.floor(Math.random() * (Math.floor(max) - min + 1) + min);
@@ -149,23 +151,30 @@ const aiCheckTwo = (a, b, c) => {
   tic.sort();
   if (tac[0]) {
     tac[0].classList.add("tac");
-    msg("Now what !!");
+    msg("Now what !!", true);
     return true;
   }
   if (tic[0]) {
     tic[0].classList.add("tac");
-    msg("I am not fool.");
+    msg("I am not fool.", true);
     return true;
   }
   return false;
 };
 const ai = () => {
+  if (!active) {
+    return;
+  }
+
   if (aiCheckTwo()) {
   } else if (!cf1()) {
     while (true) {
       const item = allItems[arNUmber1[mathRandom(0, 4)]];
       if (ce(item)) {
         item.classList.add("tac");
+        if (clickedOn) {
+          msg("Uhu!", true);
+        }
         break;
       }
     }
@@ -174,6 +183,9 @@ const ai = () => {
       const item = allItems[mathRandom(0, 8)];
       if (ce(item)) {
         item.classList.add("tac");
+        if (clickedOn) {
+          msg("Hah!", true);
+        }
         break;
       }
     }
@@ -185,6 +197,7 @@ const startGame = () => {
   active = true;
   main.classList.add("active");
   time = false;
+  clickedOn = undefined;
   setTimeout(() => {
     ai();
   }, 200);

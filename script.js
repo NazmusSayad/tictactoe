@@ -6,6 +6,7 @@ let active;
 // --------============================= ===
 allItems.forEach((element) => {
   element.addEventListener("click", function () {
+    clickedOn=true
     if (ce(this) && time && active) {
       this.classList.add("tic");
       time = false;
