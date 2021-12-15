@@ -189,7 +189,7 @@ const startGame = () => {
     ai();
   }, 200);
   msgBox.textContent = "Let's see";
-  event.target.textContent += " again";
+  event.target.textContent = "Play again";
 };
 
 const msg = (param, i) => {
