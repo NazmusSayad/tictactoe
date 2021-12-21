@@ -6,6 +6,10 @@ const mathRandom = (min = 0, max = 1) => {
   min = Math.ceil(min);
   return Math.floor(Math.random() * (Math.floor(max) - min + 1) + min);
 };
+
+const mathRandomFrom = (array = [false, true]) => {
+  return array[Math.ceil(Math.random() * array.length) - 1];
+};
 const cf = () => {
   const a = [];
   document.querySelectorAll("#ticTacToe > div").forEach((element) => {
@@ -150,12 +154,12 @@ const aiCheckTwo = (a, b, c) => {
   tic.sort();
   if (tac[0]) {
     tac[0].classList.add("tac");
-    msg("Now what !!", true);
+    msg(mathRandomFrom(["Hooo", "Now what!", "Yee boi", "lol", "so ?", "I am smatttttttttter than you..."]), true);
     return true;
   }
   if (tic[0]) {
     tic[0].classList.add("tac");
-    msg("I am not fool.", true);
+    msg(mathRandomFrom(["ops!", "i watched", "human is slow", "#zero", "i am powerful", "okie?", "I am smatttttttttter than you..."]), true);
     return true;
   }
   return false;
@@ -171,7 +175,21 @@ const ai = () => {
       if (ce(item)) {
         item.classList.add("tac");
         if (clickedOn) {
-          msg("Uhu!", true);
+          msg(
+            mathRandomFrom([
+              "eww",
+              "yepp",
+              "now",
+              "you bot",
+              "loser",
+              "i need sleep",
+              "who the hake are you?",
+              "Are you hecker???",
+              "I'm a bot, beat me bro.",
+              "are you robot ??",
+            ]),
+            true
+          );
         }
         break;
       }
@@ -182,7 +200,21 @@ const ai = () => {
       if (ce(item)) {
         item.classList.add("tac");
         if (clickedOn) {
-          msg("Hah!", true);
+          msg(
+            mathRandomFrom([
+              "eww",
+              "yepp",
+              "now",
+              "you bot",
+              "loser",
+              "i need sleep",
+              "foooooooooool!",
+              "can't beat a bot",
+              "human are booooooooring",
+              "playing like damaged robot, lOl!",
+            ]),
+            true
+          );
         }
         break;
       }
@@ -203,6 +235,10 @@ const startGame = () => {
   event.target.textContent = "Play again";
 };
 const msg = (param, i) => {
+  if (i) {
+    msgBox.textContent = param;
+    return;
+  }
   switch (param) {
     case "win":
       msgBox.textContent = "You Win...";
@@ -219,8 +255,5 @@ const msg = (param, i) => {
       active = false;
       main.classList.remove("active");
       break;
-  }
-  if (i) {
-    msgBox.textContent = param;
   }
 };
