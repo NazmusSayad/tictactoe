@@ -1,107 +1,107 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
 html {
-  font-family: "Roboto", sans-serif;
-  background-color: aliceblue;
+   font-family: "Roboto", sans-serif;
+   background-color: aliceblue;
 }
 body {
-  min-height: fit-content;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-around;
+   min-height: fit-content;
+   display: flex;
+   align-items: center;
+   flex-direction: column;
+   justify-content: space-around;
 }
 main {
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   margin: 50px;
 }
 #ticTacToe {
-  box-shadow: 0 0 40px #00000050, 0 0 40px #00000050, 0 0 40px #00000050;
-  background-color: aliceblue;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2px;
-  border-radius: 20px;
-  .fa-circle {
-    font-size: 20px;
-  }
-  .fa-times {
-    font-size: 25px;
-  }
-  .item1 {
-    border-radius: 15px 0 0 0;
-  }
-  .item3 {
-    border-radius: 0 15px 0 0;
-  }
-  .item9 {
-    border-radius: 0 0 15px 0;
-  }
-  .item7 {
-    border-radius: 0 0 0 15px;
-  }
-  & > div {
-    height: 75px;
-    width: 75px;
-    background-color: blueviolet;
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    color: #fff;
-    cursor: not-allowed;
-    i {
-      display: none;
-    }
-  }
-  .tic {
-    cursor: no-drop !important;
-    .fa-circle {
-      display: block;
-    }
-  }
-  .tac {
-    cursor: no-drop !important;
-    .fa-times {
-      display: block;
-    }
-  }
+   box-shadow: 0 0 40px #00000050, 0 0 40px #00000050, 0 0 40px #00000050;
+   background-color: aliceblue;
+   display: grid;
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: 2px;
+   border-radius: 20px;
+   .fa-circle {
+      font-size: 20px;
+   }
+   .fa-times {
+      font-size: 25px;
+   }
+   .item1 {
+      border-radius: 15px 0 0 0;
+   }
+   .item3 {
+      border-radius: 0 15px 0 0;
+   }
+   .item9 {
+      border-radius: 0 0 15px 0;
+   }
+   .item7 {
+      border-radius: 0 0 0 15px;
+   }
+   & > div {
+      height: 75px;
+      width: 75px;
+      background-color: blueviolet;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      color: #fff;
+      cursor: not-allowed;
+      i {
+         display: none;
+      }
+   }
+   .tic {
+      cursor: no-drop !important;
+      .fa-circle {
+         display: block;
+      }
+   }
+   .tac {
+      cursor: no-drop !important;
+      .fa-times {
+         display: block;
+      }
+   }
 }
 .active {
-  & > div {
-    cursor: pointer !important;
-  }
+   & > div {
+      cursor: pointer !important;
+   }
 }
 .red {
-  background-color: red !important;
+   background-color: red !important;
 }
 .green {
-  background-color: aqua !important;
+   background-color: aqua !important;
 }
 .bottomCon {
-  min-height: 30vh;
-  text-align: center;
-  .msgBox {
-    font-size: 1.3rem;
-    color: coral;
-  }
+   min-height: 30vh;
+   text-align: center;
+   .msgBox {
+      font-size: 1.3rem;
+      color: coral;
+   }
 }
 button {
-  // left: calc(50% - 75px);
-  // position: fixed;
-  // bottom: 0;
-  font-size: 1.2rem;
-  border: 0;
-  cursor: pointer;
-  margin-top: 10vh;
-  background: aquamarine;
-  padding: 10px 0;
-  width: 150px;
-  border-radius: 10px;
+   // left: calc(50% - 75px);
+   // position: fixed;
+   // bottom: 0;
+   font-size: 1.2rem;
+   border: 0;
+   cursor: pointer;
+   margin-top: 10vh;
+   background: aquamarine;
+   padding: 10px 0;
+   width: 150px;
+   border-radius: 10px;
 }
